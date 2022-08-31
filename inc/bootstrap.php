@@ -6,4 +6,7 @@
     
     // include the use model file
     require_once PROJECT_ROOT_PATH . "/Model/UnitTypeModel.php";
+
+    // include the use model file
+    require_once PROJECT_ROOT_PATH . "/Model/UnitModel.php";
 ?>

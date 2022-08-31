@@ -12,8 +12,8 @@
             if (strtoupper($requestMethod) == 'GET') {
                 try {
                     $unitTypeModel = new UnitTypeModel();
-                    $arrUnityType = $unitTypeModel->getUnitType();
-                    $responseData = json_encode($arrUnityType);
+                    $arrUnitType = $unitTypeModel->getUnitType();
+                    $responseData = json_encode($arrUnitType);
                 } catch (Error $e) {
                     $strErrorDesc = $e->getMessage().'Something went wrong! Please contact support.';
                     $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
