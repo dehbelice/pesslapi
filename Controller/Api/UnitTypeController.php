@@ -2,7 +2,7 @@
     class UnitTypeController extends BaseController
     {
         /**
-         * "/user/list" Endpoint - Get list of users
+         * "/unittype/list" Endpoint - Get list possibles unit types
          */
         public function listAction()
         {

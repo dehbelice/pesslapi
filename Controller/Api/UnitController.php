@@ -58,7 +58,10 @@
                 );
             }
         }
-
+        
+        /**
+         * Function to validate all the post fields
+         */
         public function validateInput()
         {
             if (!(isset($_POST['from']) && $_POST['from'])) {
@@ -76,6 +79,9 @@
             return true;
         }
 
+        /**
+         * "/unit/converttemperature" Endpoint - Calculate the temperature conversion based on the options sended
+         */
         public function convertemperatureAction()
         {
             $strErrorDesc = '';
@@ -84,6 +90,7 @@
             if (strtoupper($requestMethod) == 'POST') {
                 try {
 
+                    //makes the validation of the posted fields
                     if($this->validateInput()){
                         $unitFrom = $_POST['from'];
                         $unitTo = $_POST['to'];
@@ -92,6 +99,7 @@
                         $strErrorDesc="Invalid Parameters!";
                     }
                     
+                    // Decides wich function needs to be called based on the field values
                     $unitModel = new UnitModel();
                     switch ($unitFrom){
                         case 'cel':
@@ -134,15 +142,17 @@
             }
         }
 
-
-        public function convertlenghtAction()
+        /**
+         * "/unit/convertlength" Endpoint - Calculate the length conversion based on the options sended
+         */
+        public function convertlengthAction()
         {
             $strErrorDesc = '';
             $requestMethod = $_SERVER["REQUEST_METHOD"];
 
             if (strtoupper($requestMethod) == 'POST') {
                 try {
-
+                    //makes the validation of the posted fields
                     if($this->validateInput()){
                         $unitFrom = $_POST['from'];
                         $unitTo = $_POST['to'];
@@ -151,6 +161,7 @@
                         $strErrorDesc="Invalid Parameters!";
                     }
                     
+                    // Decides wich function needs to be called based on the field values
                     $unitModel = new UnitModel();
                     switch ($unitFrom){
                         case 'km':
@@ -223,6 +234,9 @@
             }
         }
 
+        /**
+         * "/unit/convertspeed" Endpoint - Calculate the speed conversion based on the options sended
+         */
         public function convertspeedAction()
         {
             $strErrorDesc = '';
@@ -230,7 +244,7 @@
 
             if (strtoupper($requestMethod) == 'POST') {
                 try {
-
+                    //makes the validation of the posted fields
                     if($this->validateInput()){
                         $unitFrom = $_POST['from'];
                         $unitTo = $_POST['to'];
@@ -239,6 +253,7 @@
                         $strErrorDesc="Invalid Parameters!";
                     }
                     
+                    // Decides wich function needs to be called based on the field values
                     $unitModel = new UnitModel();
                     switch ($unitFrom){
                         case 'mps':
