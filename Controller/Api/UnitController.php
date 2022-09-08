@@ -72,7 +72,7 @@
                 return false;
             }
 
-            if (!(isset($_POST['value']) && $_POST['value'])) {
+            if (!(isset($_POST['value']))) {
                 return false;
             }
             
